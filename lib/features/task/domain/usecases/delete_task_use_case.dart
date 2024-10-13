@@ -6,6 +6,6 @@ class DeleteTaskUseCase {
   DeleteTaskUseCase({required this.taskRepo});
 
   Future<void> deleteTask(String taskId) async {
-    await taskRepo.deleteTask(taskId);
+    await taskRepo.deleteTask(taskId: taskId);
   }
 }

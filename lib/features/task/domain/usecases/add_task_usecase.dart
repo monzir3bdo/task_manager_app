@@ -7,6 +7,6 @@ class AddTaskUseCase {
   AddTaskUseCase({required this.taskRepo});
 
   Future<void> addTask(AddTaskDto taskDto) async {
-    await taskRepo.addTask(taskDto);
+    await taskRepo.addTask(taskDto: taskDto);
   }
 }

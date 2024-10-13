@@ -10,8 +10,18 @@ ThemeData lightTheme = ThemeData(
     ),
   ),
   inputDecorationTheme: InputDecorationTheme(
+    fillColor: Colors.white,
     filled: true,
     hintStyle: AppTextStyles.medium14,
-    border: const OutlineInputBorder(),
+    enabledBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        color: Colors.black.withOpacity(0.1),
+      ),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        color: Colors.black.withOpacity(0.1),
+      ),
+    ),
   ),
 );

@@ -13,7 +13,7 @@ abstract class TasksServiceClient {
   );
   @DELETE('todos/{todoId}')
   Future<void> deleteTask(
-    @Path('todoId') int todoId,
+    @Path('todoId') String todoId,
   );
   @GET('/todos')
   Future<List<Task>> getTasks(

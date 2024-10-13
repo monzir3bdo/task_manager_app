@@ -24,7 +24,7 @@ class TasksRemoteDataSource {
         taskDto.todoId, taskDto.todo, taskDto.completed, taskDto.userId);
   }
 
-  Future<void> deleteTask({required int todoId}) async {
-    return await tasksServiceClient.deleteTask(todoId);
+  Future<void> deleteTask({required String taskId}) async {
+    return await tasksServiceClient.deleteTask(taskId);
   }
 }

@@ -6,7 +6,7 @@ class UpdateTaskUseCase {
 
   UpdateTaskUseCase({required this.taskRepo});
 
-  Future<void> updateTask(UpdateTaskDto task) {
-    return taskRepo.updateTask(task);
+  Future<void> updateTask(UpdateTaskDto taskDto) {
+    return taskRepo.updateTask(taskDto: taskDto);
   }
 }

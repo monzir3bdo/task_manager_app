@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:maids_task/core/network/result/result.dart';
 import 'package:maids_task/features/task/data/data_source/local/tasks_local_data_source.dart';
 import 'package:maids_task/features/task/data/data_source/remote/tasks_remote_data_source.dart';
@@ -6,22 +7,30 @@ import 'package:maids_task/features/task/domain/dtos/update_task_dto.dart';
 import 'package:maids_task/features/task/domain/entity/task_entity.dart';
 import 'package:maids_task/features/task/domain/repo/task_repo.dart';
 
+@injectable
 class TaskRepoImpl implements TaskRepo {
-  final TasksRemoteDataSource remoteDataSource;
+  final TasksRemoteDataSource tasksRemoteDataSource;
   final TasksLocalDataSource tasksLocalDataSource;
 
-  TaskRepoImpl(
-      {required this.remoteDataSource, required this.tasksLocalDataSource});
+  TaskRepoImpl(this.tasksRemoteDataSource, this.tasksLocalDataSource);
   @override
-  Future<Result<void>> addTask(AddTaskDto taskDto) {
-    // TODO: implement addTask
-    throw UnimplementedError();
+  Future<Result<void>> addTask({required AddTaskDto taskDto}) async {
+    try {
+      return Result.success(
+          await tasksRemoteDataSource.addTask(taskDto: taskDto));
+    } catch (e) {
+      return Result.failure(e.toString());
+    }
   }
 
   @override
-  Future<Result<void>> deleteTask(String taskId) {
-    // TODO: implement deleteTask
-    throw UnimplementedError();
+  Future<Result<void>> deleteTask({required String taskId}) async {
+    try {
+      return Result.success(
+          await tasksRemoteDataSource.deleteTask(taskId: taskId));
+    } catch (e) {
+      return Result.failure(e.toString());
+    }
   }
 
   @override
@@ -31,8 +40,12 @@ class TaskRepoImpl implements TaskRepo {
   }
 
   @override
-  Future<Result<void>> updateTask(UpdateTaskDto taskDto) {
-    // TODO: implement updateTask
-    throw UnimplementedError();
+  Future<Result<void>> updateTask({required UpdateTaskDto taskDto}) async {
+    try {
+      return Result.success(
+          await tasksRemoteDataSource.updateTask(taskDto: taskDto));
+    } catch (e) {
+      return Result.failure(e.toString());
+    }
   }
 }
