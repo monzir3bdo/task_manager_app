@@ -9,7 +9,7 @@ class LoginUseCase {
 
   LoginUseCase({required this.authRepo});
   Future<Result<LoginEntity>> call(
-      {required String email, required String password}) async {
-    return authRepo.login(email: email, password: password);
+      {required String username, required String password}) async {
+    return authRepo.login(username: username, password: password);
   }
 }
