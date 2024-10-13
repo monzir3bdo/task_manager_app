@@ -1,8 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 
 part 'login_entity.freezed.dart';
+part 'login_entity.g.dart';
 
 @freezed
+@injectable
 class LoginEntity with _$LoginEntity {
   const factory LoginEntity({
     required int id,

@@ -4,7 +4,7 @@ import 'package:maids_task/features/auth/data/data_sources/remote/login_remote_d
 import 'package:maids_task/features/auth/domain/entity/login_entity.dart';
 import 'package:maids_task/features/auth/domain/repo/auth_repo.dart';
 
-@injectable
+@Injectable(as: AuthRepo)
 class AuthRepoImpl implements AuthRepo {
   final LoginRemoteDataSource remoteDataSource;
 
