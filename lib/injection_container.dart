@@ -9,6 +9,7 @@ import 'package:maids_task/features/task/data/repo/tasks_repo_impl.dart';
 import 'package:maids_task/features/task/domain/repo/task_repo.dart';
 import 'package:maids_task/features/task/presentation/bloc/add_task/add_task_cubit.dart';
 import 'package:maids_task/features/task/presentation/bloc/get_tasks/get_tasks_bloc.dart';
+import 'package:maids_task/features/task/presentation/bloc/update_task/update_task_cubit.dart';
 import 'package:maids_task/injection_container.config.dart';
 
 import 'core/network/dio_factory.dart';
@@ -26,6 +27,7 @@ Future<void> init() async {
   getIt.registerFactory<TaskRepo>(() => TaskRepoImpl(getIt(), getIt()));
   getIt.registerFactory(() => GetTasksBloc(getIt()));
   getIt.registerFactory(() => AddTaskCubit(getIt()));
+  getIt.registerFactory(() => UpdateTaskCubit(getIt()));
   configureDependencies();
 }
 
