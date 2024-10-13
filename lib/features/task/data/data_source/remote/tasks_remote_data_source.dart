@@ -1,16 +1,15 @@
-import 'package:injectable/injectable.dart';
 import 'package:maids_task/core/network/clients/tasks_service_client.dart';
+import 'package:maids_task/features/task/data/model/tasks_response.dart';
 import 'package:maids_task/features/task/domain/dtos/update_task_dto.dart';
-import 'package:maids_task/features/task/domain/entity/task_entity.dart';
 
 import '../../../domain/dtos/add_task_dto.dart';
 
-@injectable
 class TasksRemoteDataSource {
   final TasksServiceClient tasksServiceClient;
 
   TasksRemoteDataSource({required this.tasksServiceClient});
-  Future<List<Task>> getTasks({required int skip, required int limit}) async {
+  Future<TasksResponse> getTasks(
+      {required int skip, required int limit}) async {
     return await tasksServiceClient.getTasks(skip, limit);
   }
 

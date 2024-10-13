@@ -1,5 +1,5 @@
 class Task {
-  final String id;
+  final int id;
   final String todo;
   final bool completed;
   final int userId;

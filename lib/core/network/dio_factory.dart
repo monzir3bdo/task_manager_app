@@ -22,12 +22,11 @@ class DioFactory {
     };
     dio.options = BaseOptions(
       headers: headers,
-      baseUrl: 'https://dummyjson.com/',
+      baseUrl: "https://dummyjson.com/",
       connectTimeout: const Duration(milliseconds: 1500000),
       receiveTimeout: const Duration(milliseconds: 1500000),
     );
     if (kReleaseMode) {
-      print('Release mode no logs');
     } else {
       dio.interceptors.add(PrettyDioLogger(
         requestHeader: true,

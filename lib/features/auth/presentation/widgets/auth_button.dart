@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maids_task/core/extensions/build_context_extensions.dart';
-import 'package:maids_task/features/auth/presentation/bloc/auth/auth_cubit.dart';
+import 'package:maids_task/features/task/presentation/screens/tasks_screen.dart';
 
 class AuthButton extends StatelessWidget {
   const AuthButton({super.key, this.onPressed, this.child});
@@ -14,7 +13,8 @@ class AuthButton extends StatelessWidget {
       width: context.width,
       child: ElevatedButton(
         onPressed: () {
-          context.read<AuthCubit>().login();
+          // context.read<AuthCubit>().login();
+          context.push(const TasksScreen());
         },
         child: child,
       ),

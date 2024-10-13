@@ -1,13 +1,11 @@
-import 'package:injectable/injectable.dart';
 import 'package:maids_task/core/network/result/result.dart';
 import 'package:maids_task/features/task/data/data_source/local/tasks_local_data_source.dart';
 import 'package:maids_task/features/task/data/data_source/remote/tasks_remote_data_source.dart';
+import 'package:maids_task/features/task/data/model/tasks_response.dart';
 import 'package:maids_task/features/task/domain/dtos/add_task_dto.dart';
 import 'package:maids_task/features/task/domain/dtos/update_task_dto.dart';
-import 'package:maids_task/features/task/domain/entity/task_entity.dart';
 import 'package:maids_task/features/task/domain/repo/task_repo.dart';
 
-@injectable
 class TaskRepoImpl implements TaskRepo {
   final TasksRemoteDataSource tasksRemoteDataSource;
   final TasksLocalDataSource tasksLocalDataSource;
@@ -34,9 +32,15 @@ class TaskRepoImpl implements TaskRepo {
   }
 
   @override
-  Future<Result<List<Task>>> getTasks() {
-    // TODO: implement getTasks
-    throw UnimplementedError();
+  Future<Result<TasksResponse>> getTasks(
+      {required int skip, required int limit}) async {
+    try {
+      final response =
+          await tasksRemoteDataSource.getTasks(skip: skip, limit: limit);
+      return Result.success(response);
+    } catch (e) {
+      return Result.failure(e.toString());
+    }
   }
 
   @override

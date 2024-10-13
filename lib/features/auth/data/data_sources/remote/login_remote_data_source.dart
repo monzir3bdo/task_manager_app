@@ -9,7 +9,6 @@ class LoginRemoteDataSource {
   LoginRemoteDataSource({required this.loginServiceClient});
   Future<LoginEntity> login(
       {required String username, required String password}) async {
-    print(username + password);
     return await loginServiceClient.login(username, password);
   }
 }
