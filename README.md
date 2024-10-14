@@ -19,3 +19,13 @@ Flutter SDK
 Dart
 An IDE (e.g., Android Studio, VSCode)
 Installation:
+## Installation
+
+### For Developers
+
+1. Clone the repository.
+2. Run `dart pub get` to install dependencies.
+3. Run `dart run build_runner build` to generate necessary files.
+### For Normal Users
+
+- Download the app from Here
