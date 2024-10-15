@@ -13,4 +13,12 @@ class Assets {
       'assets/fonts/poppins/Poppins-Regular.ttf';
   static const String poppinsPoppinsSemiBold =
       'assets/fonts/poppins/Poppins-SemiBold.ttf';
+  static const String screenshotsScreenshot1728939579 =
+      'assets/screenshots/screen1.png';
+  static const String screenshotsScreenshot1728939580 =
+      'assets/screenshots/screen2.png';
+  static const String screenshotsScreenshot1728939586 =
+      'assets/screenshots/screen3.png';
+  static const String screenshotsScreenshot1728959615 =
+      'assets/screenshots/screen0.png';
 }
