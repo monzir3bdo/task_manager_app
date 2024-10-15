@@ -1,16 +1,36 @@
-# maids_task
+### Task Manager  
+## Features
+# User Authentication
+Secure user authentication using DummyJSON Authentication.
+Users can log in with their username and password.
+# Task Management
+View, add, edit, and delete tasks using the DummyJSON Todo API.
+# Pagination
+Efficiently fetch tasks with paginatio
+# State Management
+Implemented using BLoC for efficient state updates across the app.
+# Local Storage
+Persist tasks locally using Flutter's Shared Preferences, ensuring data is retained even when the app is closed.
+# Unit Tests
+Comprehensive unit tests cover task CRUD operations, input validation, state management, and network requests using mock responses from reqres.in.
+Getting Started
+# Prerequisites
+Flutter SDK
+Dart
+An IDE (e.g., Android Studio, VSCode)
+Installation:
+## Installation
 
-A new Flutter project.
+### For Developers
 
-## Getting Started
+1. Clone the repository.
+2. Run `dart pub get` to install dependencies.
+3. Run `dart run build_runner build` to generate necessary files.
+### For Normal Users
 
-This project is a starting point for a Flutter application.
+- Download the app from Here <a href="https://www.upload-apk.com/xi3i21Yuer8HnX6" style="text-decoration:none;">
+    <button style="background-color:#4CAF50; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">
+        Download APK
+    </button>
+</a>
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
