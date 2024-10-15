@@ -15,7 +15,7 @@ class AuthCubit extends Cubit<AuthState> {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   Future<void> login() async {
-    if (loginKey.currentState!.validate()) {
+    if (isFormValid()) {
       emit(const AuthState.loading());
       final result = await loginUseCase(
           username: usernameController.text.trim(),
@@ -29,6 +29,10 @@ class AuthCubit extends Cubit<AuthState> {
         },
       );
     }
+  }
+
+  bool isFormValid() {
+    return loginKey.currentState?.validate() ?? false;
   }
 
   @override

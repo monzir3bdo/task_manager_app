@@ -9,5 +9,5 @@ abstract class TaskRepo {
       {required int skip, required int limit});
   Future<Result<void>> addTask({required AddTaskDto taskDto});
   Future<Result<void>> updateTask({required UpdateTaskDto taskDto});
-  Future<Result<void>> deleteTask({required String taskId});
+  Future<Result<void>> deleteTask({required int taskId});
 }

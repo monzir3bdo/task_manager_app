@@ -16,11 +16,7 @@ class AddNewTaskFloatingActionButton extends StatelessWidget {
           context,
           BlocProvider(
             create: (context) => getIt<AddTaskCubit>(),
-            child: Padding(
-              padding: EdgeInsets.only(
-                  bottom: MediaQuery.of(context).viewInsets.bottom),
-              child: const NewTaskWidget(),
-            ),
+            child: const NewTaskWidget(),
           ),
         );
       },

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:maids_task/core/extensions/build_context_extensions.dart';
+import 'package:maids_task/core/extensions/strings_extension.dart';
+import 'package:maids_task/core/functions/custom_toast.dart';
 import 'package:maids_task/features/task/domain/entity/task_entity.dart';
 import 'package:maids_task/features/task/presentation/bloc/update_task/update_task_cubit.dart';
 import 'package:maids_task/features/task/presentation/widgets/update_task/update_task_button.dart';
@@ -26,8 +28,12 @@ class UpdateTaskWidget extends StatelessWidget {
             state.whenOrNull(
               success: () {
                 context.pop();
+                CustomToastWidget.successToast(
+                    'Task Updated Successfully'.hardCoded);
               },
-              failure: (message) {},
+              failure: (message) {
+                CustomToastWidget.errorToast(message);
+              },
             );
           },
           child: Column(
@@ -36,7 +42,7 @@ class UpdateTaskWidget extends StatelessWidget {
               const Gap(20),
               UpdateTaskTextField(task: task),
               const Gap(20),
-              const UpdateTaskSwitch(),
+              UpdateTaskSwitch(task: task),
               const Spacer(),
               UpdateTaskButton(todoId: task.id),
             ],

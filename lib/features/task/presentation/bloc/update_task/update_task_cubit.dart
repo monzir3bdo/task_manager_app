@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:maids_task/features/task/domain/repo/task_repo.dart';
+import 'package:maids_task/features/task/domain/usecases/update_task_use_case.dart';
 
 import '../../../domain/dtos/update_task_dto.dart';
 
@@ -12,16 +12,17 @@ class UpdateTaskCubit extends Cubit<UpdateTaskState> {
   UpdateTaskCubit(this.taskRepo) : super(const UpdateTaskState.initial());
   GlobalKey<FormState> newTaskKey = GlobalKey<FormState>();
   TextEditingController updateTaskController = TextEditingController();
-  final TaskRepo taskRepo;
+  final UpdateTaskUseCase taskRepo;
   bool isFinished = false;
   toggleNewTaskButton() {
     isFinished = !isFinished;
+    emit(UpdateTaskState.toggleUpdateTaskState(completed: isFinished));
   }
 
   updateTask(int todoId) async {
     if (newTaskKey.currentState!.validate()) {
       emit(const UpdateTaskState.loading());
-      final result = await taskRepo.updateTask(
+      final result = await taskRepo(
           taskDto: UpdateTaskDto(
         todo: updateTaskController.text,
         completed: isFinished,

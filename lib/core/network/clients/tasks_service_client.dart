@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:maids_task/core/constants/app_constants.dart';
-import 'package:maids_task/features/task/data/model/tasks_model.dart';
 import 'package:maids_task/features/task/data/model/tasks_response.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
@@ -22,7 +21,7 @@ abstract class TasksServiceClient {
   );
   @DELETE('todos/{todoId}')
   Future<void> deleteTask(
-    @Path('todoId') String todoId,
+    @Path('todoId') int todoId,
   );
   @GET('todos')
   Future<TasksResponse> getTasks(
