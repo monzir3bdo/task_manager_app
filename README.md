@@ -28,4 +28,9 @@ Installation:
 3. Run `dart run build_runner build` to generate necessary files.
 ### For Normal Users
 
-- Download the app from Here
+- Download the app from Here <a href="https://www.upload-apk.com/xi3i21Yuer8HnX6" style="text-decoration:none;">
+    <button style="background-color:#4CAF50; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">
+        Download APK
+    </button>
+</a>
+
