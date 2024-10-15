@@ -14,7 +14,7 @@ Users can log in with their username and password.
 # Task Management
 View, add, edit, and delete tasks using the DummyJSON Todo API.
 # Pagination
-Efficiently fetch tasks with paginatio
+Efficiently fetch tasks with pagination
 # State Management
 Implemented using BLoC for efficient state updates across the app.
 # Local Storage
