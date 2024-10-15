@@ -1,5 +1,4 @@
 ### Task Manager  
-## Screen Shots
 ### Screenshots
 
 | ![Screenshot 1](assets/screenshots/screen0.png) | ![Screenshot 2](assets/screenshots/screen2.png) | ![Screenshot 3](assets/screenshots/screen1.png) | ![Screenshot 4](assets/screenshots/screen3.png) |
@@ -32,7 +31,7 @@ Installation:
 ### For Developers
 
 1. Clone the repository.
-2. Run `dart pub get` to install dependencies.
+2. Run `flutter pub get` to install dependencies.
 3. Run `dart run build_runner build` to generate necessary files.
 ### For Normal Users
 
